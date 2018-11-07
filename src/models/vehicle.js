@@ -54,4 +54,5 @@ class Vehicle {
   }
 }
 
+// Export
 module.exports = Vehicle;

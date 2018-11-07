@@ -2,22 +2,26 @@ version: '3.3'
 
 services:
   dev:
-    container_name: expressjs_dev
-    command: ["pm2-runtime", "start", "/usr/src/app/server.js", "--watch"]
-    image: expressjs:1.0.3
-    ports: ["1234:8080"]
-    volumes:
-      - ./:/usr/src/app
+    build:
+      context: ".docker/"
+      dockerfile: "Dockerfile"
+    container_name: "${APP_NAME:-expressjs_dev}"
+    command: [ "pm2-runtime", "start", "/usr/src/app/server.js", "--watch" ]
+    image: expressjs:latest
+    ports: [ "${PORT:-8080}:8080" ]
+    volumes: [ "./:/usr/src/app" ]
     environment:
-      APP_ENV: "dev"
+      APP_ENV: "${APP_ENV:-dev}"
 
   stable:
-    container_name: expressjs_stable
+    build:
+      context: ".docker/"
+      dockerfile: "Dockerfile"
+    container_name: "${APP_NAME:-expressjs_stable}"
     command: [ "pm2", "start", "/usr/src/app/server.js" ]
-    image: expressjs:1.0.3
-    ports: ["1234:8080"]
-    volumes:
-      - ./:/usr/src/app
+    image: expressjs:latest
+    ports: [ "${PORT:-8080}:8080" ]
+    volumes: [ "./:/usr/src/app" ]
     environment:
-      APP_ENV: "stable"
+      APP_ENV: "${APP_ENV:-stable}"
     restart: always

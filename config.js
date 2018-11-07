@@ -1,10 +1,12 @@
 'use strict';
 
+// Default / env configuration
 const config = {
   APP_NAME: process.env.APP_NAME || 'ExpressJS',
   APP_ENV: process.env.APP_ENV || 'dev',
-  HOST: process.env.HOST || '0.0.0.0',
-  PORT: process.env.PORT || 8080
+  HOST: '0.0.0.0',
+  PORT: 8080
 };
 
+// Export
 module.exports = config;
