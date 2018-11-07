@@ -21,8 +21,8 @@ class Vehicle {
   /**
    * @returns {int}
    */
-  get milage() {
-    return this.vehicle.milage;
+  get mileage() {
+    return this.vehicle.mileage;
   }
 
   /**

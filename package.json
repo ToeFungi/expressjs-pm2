@@ -4,6 +4,10 @@
   "description": "ExpressJS running with pm2",
   "author": "Alex Pickering <pickeringacw@gmail.com>",
   "main": "server.js",
+  "scripts": {
+    "monit_dev": "docker exec -it expressjs_dev pm2 monit",
+    "monit_stable": "docker exec -it expressjs_stable pm2 monit"
+  },
   "dependencies": {
     "dotenv": "^6.1.0",
     "express": "^4.16.1"
