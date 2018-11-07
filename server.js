@@ -8,7 +8,9 @@ const app = express();
 // Configs, Routes
 const config = require('./config');
 const routes = require('./src/routes/routes');
+const bodyParser = require('body-parser');
 
+app.use(bodyParser.json());
 app.use('/vehicles', routes);
 
 app.listen(config.PORT, config.HOST);

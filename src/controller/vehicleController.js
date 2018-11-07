@@ -11,7 +11,9 @@ class vehicleController {
    * @param res
    */
   static createVehicle(req, res) {
-    res.send('Create Not Implemented');
+    let vehicle = vehicleModel.wrap(req.body);
+
+    res.send(`${vehicle.toJson}`);
   }
 
   /**
@@ -23,10 +25,15 @@ class vehicleController {
   static getVehicle(req, res) {
     // Instantiate new model and populate
     let vehicle = vehicleModel.wrap({
-      'mileage': 114456
+      'mileage': '12224 km',
+      'colour': 'Red',
+      'transmission': 'Automatic',
+      'driveTrain': '4x2',
+      'engineCapacity': '3.0L',
+      'engineFuelType': 'Petrol'
     });
 
-    res.send(`Vehicle ${req.params.id}'s mileage is ${vehicle.mileage} km`);
+    res.send(`${vehicle.toJson}`);
   }
 
   /**
@@ -36,7 +43,9 @@ class vehicleController {
    * @param res
    */
   static updateVehicle(req, res) {
-    res.send('Update Not Implemented');
+    let vehicle = vehicleModel.wrap(req.body);
+
+    res.send(`${vehicle.toJson}`);
   }
 
   /**
@@ -46,7 +55,9 @@ class vehicleController {
    * @param res
    */
   static deleteVehicle(req, res) {
-    res.send('Delete Not Implemented');
+    let vehicle = vehicleModel.wrap(req.body);
+
+    res.send(`${vehicle.toJson}`);
   }
 }
 

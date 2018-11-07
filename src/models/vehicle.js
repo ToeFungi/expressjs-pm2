@@ -52,6 +52,13 @@ class Vehicle {
   get engineFuelType() {
     return this.vehicle.engineFuelType;
   }
+
+  /**
+   * @returns {string}
+   */
+  get toJson() {
+    return JSON.stringify(this.vehicle);
+  }
 }
 
 // Export
