@@ -2,6 +2,7 @@
 
 // Vehicle model required
 const vehicleModel = require('../models/vehicle');
+const httpStatus = require('../library/HttpStatus');
 
 class vehicleController {
   /**
@@ -11,9 +12,8 @@ class vehicleController {
    * @param res
    */
   static createVehicle(req, res) {
-    let vehicle = vehicleModel.wrap(req.body);
-
-    res.send(`${vehicle.toJson}`);
+    res.status(httpStatus.OK);
+    res.send();
   }
 
   /**
@@ -23,17 +23,8 @@ class vehicleController {
    * @param res
    */
   static getVehicle(req, res) {
-    // Instantiate new model and populate
-    let vehicle = vehicleModel.wrap({
-      'mileage': '12224 km',
-      'colour': 'Red',
-      'transmission': 'Automatic',
-      'driveTrain': '4x2',
-      'engineCapacity': '3.0L',
-      'engineFuelType': 'Petrol'
-    });
-
-    res.send(`${vehicle.toJson}`);
+    res.status(httpStatus.OK);
+    res.send();
   }
 
   /**
@@ -43,9 +34,8 @@ class vehicleController {
    * @param res
    */
   static updateVehicle(req, res) {
-    let vehicle = vehicleModel.wrap(req.body);
-
-    res.send(`${vehicle.toJson}`);
+    res.status(httpStatus.OK);
+    res.send();
   }
 
   /**
@@ -55,9 +45,8 @@ class vehicleController {
    * @param res
    */
   static deleteVehicle(req, res) {
-    let vehicle = vehicleModel.wrap(req.body);
-
-    res.send(`${vehicle.toJson}`);
+    res.status(httpStatus.OK);
+    res.send();
   }
 }
 

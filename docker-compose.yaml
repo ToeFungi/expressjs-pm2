@@ -18,7 +18,7 @@ services:
       context: ".docker/"
       dockerfile: "Dockerfile"
     container_name: "${APP_NAME:-expressjs_stable}"
-    command: [ "pm2", "start", "/usr/src/app/server.js" ]
+    command: [ "pm2-runtime", "start", "/usr/src/app/server.js" ]
     image: expressjs:latest
     ports: [ "${PORT:-8080}:8080" ]
     volumes: [ "./:/usr/src/app" ]

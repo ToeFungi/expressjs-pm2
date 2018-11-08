@@ -14,6 +14,20 @@ class Vehicle {
   /**
    * @returns {string}
    */
+  get make() {
+    return this.vehicle.make;
+  }
+
+  /**
+   * @returns {string}
+   */
+  get model() {
+    return this.vehicle.model;
+  }
+
+  /**
+   * @returns {string}
+   */
   get colour() {
     return this.vehicle.colour;
   }
